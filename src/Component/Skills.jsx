@@ -9,7 +9,7 @@ import react from "../assets/icons/react.json"
 import nodeJs from "../assets/icons/nodeJs.json"
 import expressjs from "../assets/icons/expressjs.svg"
 import nextjs from "../assets/icons/nextjs.webp"
-import laravel from "../assets/icons/laravel.svg"
+import laravel from "../assets/icons/image.png"
 import Lottie from "lottie-react";
 const Skills = () => {
 
@@ -19,7 +19,7 @@ const Skills = () => {
 	return (
 		<div id="Skills" className=" p-10">
 			<div className="text-center">
-				<h1 className="text-2xl md:text-4xl lg:text-5xl mb-4">
+				<h1 className="text-2xl md:text-4xl lg:text-5xl mb-4"><br></br>
 					My skills
 				</h1>
 				<p className="text-2xl  md:text-3xl lg:text-5xl text-[#61CE70]">
@@ -96,7 +96,7 @@ const Skills = () => {
 						<div className="w-36 h-36  border-2 border-[#61CE70] ">
 							<img src={laravel} className="h-full animateSkillImage  p-5 mx-auto" alt="" />
 						</div>
-						<h1 className="text-[#1a1a1a] font-bold p-2 text-center w-36 bg-[#61CE70]">Laravel</h1>
+						<h1 className="text-[#1a1a1a] font-bold p-2 text-center w-36 bg-[#61CE70]">Flutter</h1>
 					</div>
 					<div className="">
 						<div className="w-36 h-36  border-2 border-[#61CE70] ">

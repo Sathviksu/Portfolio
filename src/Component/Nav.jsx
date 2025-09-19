@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import logo from "../assets/logo/logo.svg";
+
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { RiMenu2Line } from "react-icons/ri";
@@ -13,7 +13,7 @@ const Nav = () => {
 	const container = useRef();
 
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-	const [isOpen , setIsOpen] = useState(false)
+	const [isOpen, setIsOpen] = useState(false)
 
 	const toggleDropdown = () => {
 		setIsDropdownOpen(!isDropdownOpen);
@@ -41,9 +41,9 @@ const Nav = () => {
 
 			<div className="navbar px-20 justify-evenly lg:max-w-[1800px] w-full mx-auto hidden lg:flex bg-transparent ">
 				<div className="flex-1">
-					<a href="#home">
-						<img className="w-40 h-10" src={logo} alt="" />
-					</a>
+					{/* <a href="#home">
+						<img className="w-40 h-10 p-[6px]" alt="" />
+					</a> */}
 
 				</div>
 
@@ -74,15 +74,15 @@ const Nav = () => {
 
 			<div className="flex lg:bg-transparent md:hidden">
 				<div className="relative">
-					<div 
+					<div
 						tabIndex={0}
 						role="button"
 						className="btn text-2xl btn-ghost"
 						onClick={toggleDropdown}
 					>
 
-						{isOpen? <RxCross2 /> : <RiMenu2Line />}
-						
+						{isOpen ? <RxCross2 /> : <RiMenu2Line />}
+
 
 
 					</div>
@@ -101,9 +101,9 @@ const Nav = () => {
 						</ul>
 					)}
 				</div>
-				<a href="#home">
+				{/* <a href="#home">
 					<img className="h-12 w-40" src={logo} alt="Logo" />
-				</a>
+				</a> */}
 			</div>
 		</div>
 	);

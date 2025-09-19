@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { FaStar } from "react-icons/fa6";
-import pdf from "../assets/resume-of-mustafiz.pdf";
+import pdf from "../assets/Sathvik_resume.pdf";
 
 import "./banner.css";
-import ProfileImage from "../assets/profile-picture.webp";
+import ProfileImage from "../assets/photo.jpg";
 
 const Banner = () => {
   const [isPreparing, setIsPreparing] = useState(false); // Loading state
@@ -15,7 +15,7 @@ const Banner = () => {
     setTimeout(() => {
       const link = document.createElement("a");
       link.href = pdf;
-      link.download = "resume-of-mustafiz.pdf";
+      link.download = "resume-of-Sathvik.pdf";
       link.click();
       setIsPreparing(false); // Reset loading state
     }, 1000); // Adjust delay as needed
@@ -23,19 +23,19 @@ const Banner = () => {
 
   return (
     <div id="home">
-      <div className="w-full bg-transparent p-5 h-screen max-h-[700px] flex flex-col-reverse md:flex-row items-center justify-center gap-28 md:gap-20">
+      <div className="w-full bg-transparent p-5 h-screen max-h-[700px] flex flex-col-reverse md:flex-row mt-20 justify-center gap-28 md:gap-20">
         <div className="md:w-1/2 space-y-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-            HI, I'M Mustafiz!
+            Hi, I'm Sathvik!
           </h1>
 
           <TypeAnimation
             sequence={[
-              "junior Web Developer",
-              1000,
-              "Front end Developer",
-              2000,
-              "Junior Mern Developer",
+              "MERN Stack Developer", 1500,
+              "Front-End Developer", 1500,
+              "AI-Powered App Developer", 1500,
+              "M L Experimenter", 1500,
+              "Tech Enthusiast", 1500,
               () => {
                 console.log("Sequence completed");
               },
@@ -60,10 +60,10 @@ const Banner = () => {
             {isPreparing ? "Preparing to download..." : "Download Resume"}
           </button>
         </div>
-        <div className="mt-24 lg:mt-0">
+        <div className=" flex justify-center">
           <div
             data-aos="zoom-in"
-            className="border-8 hover:translate-y-10 duration-150 p-4 border-[#61CE70] rounded-full w-80 h-80"
+            className="border-8 hover:translate-y-10 duration-150 p-4 border-[#61CE70] rounded-full w-[250px] h-[250px] md:w-80 md:h-80 floating"
           >
             <img
               className="rounded-full h-full object-cover w-full"

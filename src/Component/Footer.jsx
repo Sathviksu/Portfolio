@@ -1,4 +1,4 @@
-import { FaFacebook, FaHome, FaMapMarkerAlt } from "react-icons/fa";
+import { FaInstagram, FaHome, FaMapMarkerAlt } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -12,23 +12,23 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
 	const form = useRef();
-	const [sendBtnMessage , sendSendBtnMessage] = useState("Send Email")
+	const [sendBtnMessage, sendSendBtnMessage] = useState("Send Email")
 
 	const sendEmail = (e) => {
 		e.preventDefault();
-		sendSendBtnMessage("Sending...")
+		sendSendBtnMessage("Sending...");
 
 		emailjs
 			.sendForm(
-				"service_yev8zd8",
-				"template_6xulcht",
+				"service_cgc6ea9",
+				"template_8pz9wbo",
 				form.current,
-				"1basqFKWSgsXJyEOu"
+				"Rn1mmsGbVvVbRGXQb"
 			)
 			.then(
 				(result) => {
 					console.log(result.text);
-					toast.success("Mail send Successfully", {
+					toast.success("Mail sent Successfully", {
 						position: "top-center",
 						autoClose: 5000,
 						hideProgressBar: false,
@@ -38,12 +38,15 @@ const Footer = () => {
 						progress: undefined,
 						theme: "dark",
 					});
-					sendSendBtnMessage("Email Sent")
+
+					sendSendBtnMessage("Email Sent");
+
+					// ✅ Clear form fields
+					form.current.reset();
 				},
 				(error) => {
 					console.log(error.text);
-					sendSendBtnMessage("Sent Failed")
-
+					sendSendBtnMessage("Send Failed");
 				}
 			);
 	};
@@ -51,7 +54,7 @@ const Footer = () => {
 	return (
 		<div
 			id="Contact"
-			className="flex flex-col md:flex-row bg-transparent text-slate-200  justify-around p-10"
+			className="flex flex-col md:flex-row bg-transparent text-slate-200  justify-around p-10 my-[50px]"
 		>
 			<div className="md:w-1/3 ">
 				<div
@@ -66,21 +69,21 @@ const Footer = () => {
 						<h1 className=" mt-8  mb-2">Socials Links</h1>
 						<div className=" text-xl md:text-base flex md:flex-row gap-5  items-center">
 							<a target="_blank"
-								href="https://www.facebook.com/mdmustafiz.rahman.988/"
+								href="https://www.instagram.com/sathvik__0_7?igsh=MWhteGk5czhqYjFweA=="
 								className="flex  items-center gap-2"
 							>
-								<FaFacebook className="text-[#61CE70]" />
-								<span className="hidden md:block">Facebook</span>
+								<FaInstagram className="text-[#61CE70]" />
+								<span className="hidden md:block">Instagram</span>
 							</a>
 							<a target="_blank"
-								href="https://www.linkedin.com/in/mdmustafiz8260/"
+								href="https://www.linkedin.com/in/sathvik-s-u/"
 								className="flex items-center gap-2"
 							>
 								<FaLinkedin className="text-[#61CE70]" />
 								<span className="hidden md:block">LinkedIn</span>
 							</a>
 							<a target="_blank"
-								href="https://github.com/Mustafiz82"
+								href="https://github.com/sathviksu"
 								className="flex items-center gap-2"
 							>
 								<FaGithub className="text-[#61CE70]" /> <span className="hidden md:block">Github</span>
@@ -96,22 +99,22 @@ const Footer = () => {
 					<MdEmail className="text-[#61CE70]" size={40} />
 					<div>
 						<h1>Email</h1>
-						<p className="text-base">mustafiz8260@gmail.com</p>
+						<p className="text-base">sathviksu07@gmail.com</p>
 					</div>
 				</div>
 
 				<div className="flex gap-2 my-10 items-center text-2xl">
 					<FaHome className="text-[#61CE70]" size={40} />
 					<div>
-						<h1>Permanent Address</h1> 
-						<p className="text-base">Rangpur, Bangladesh</p>
+						<h1>Permanent Address</h1>
+						<p className="text-base">Somwarpet, Kodagu, Karnataka</p>
 					</div>
 				</div>
 				<div className="flex gap-2 my-10 items-center text-2xl">
 					<FaLocationDot className="text-[#61CE70]" size={40} />
 					<div>
-						<h1>Present Address</h1> 
-						<p className="text-base">Mohammadpur, Dhaka, Bangladesh</p> {/* Changed example data for clarity */}
+						<h1>Present Address</h1>
+						<p className="text-base">Bengaluru, Karnataka</p> {/* Changed example data for clarity */}
 					</div>
 				</div>
 
