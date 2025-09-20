@@ -86,9 +86,6 @@ const Projects = () => {
 
 
 
-	useEffect(() => {
-		AOS.init();
-	}, []);
 
 	return (
 		<div id="Projects" className="bg-transparent py-10 ">
@@ -114,11 +111,11 @@ const Projects = () => {
 				{
 					filteredData?.map((item, inx) => (
 						<div className={`${inx % 2 == 0 ? "lg:flex-row-reverse" : ""} flex flex-col lg:flex-row justify-center h-full lg:gap-5`} key={inx}>
-							<div className="lg:w-[700px]  ">
+							<div className="lg:w-[700px]" data-aos="fade-up" data-aos-delay={inx * 200}>
 								<img className="bg-cover w-full h-[200px] lg:h-[380px]" src={item?.thumbnailImage} alt={item?.title} />
 							</div>
 
-							<div className="lg:w-[450px] h-full">
+							<div className="lg:w-[450px] h-full" data-aos="fade-left" data-aos-delay={inx * 200 + 100}>
 								<div className="min-h=[300px] lg:min-h-[340px] bg-[#61CE70]/20 backdrop-blur-lg border border-white/20 shadow-lg p-6 rounded-lg">
 									<h1 className="text-3xl lg:text-4xl">{item?.title}</h1>
 									<p className="text-sm lg:text-lg mt-5">{item?.description}</p>

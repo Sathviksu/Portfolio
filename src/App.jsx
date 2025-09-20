@@ -1,6 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Nav from "./Component/Nav";
 import Banner from "./Component/Banner";
@@ -9,41 +7,49 @@ import Skills from "./Component/Skills";
 import Projects from "./Component/Projects";
 import Footer from "./Component/Footer";
 import Education from "./Component/Education";
-import StarryBackground from "./Component/StarryBackground";
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import Experience from "./Component/Experience";
+import StarryBackground from "./Component/StarryBackground";
+import IntroScreen from "./Component/IntroScreen";
+
+// Import AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  const [introDone, setIntroDone] = useState(false);
 
-
-  const lenis = useLenis(({ scroll }) => {
-    // called every scroll
-  })
-
-
-
+  // Initialize AOS when component mounts
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+  }, []);
 
   return (
-    <> <ReactLenis root>
-      <div className="bg-black text-white">
-        <div className=" container mx-auto  sticky top-0 z-[999] ">
-          <Nav/>
-          <Banner/>
-          <AboutMe/>
-          <Skills/>
-          <Experience/>
-          <Projects/>
-          <Education/>
-          <Footer/>
-        </div>
-       <div className="z-[-999]">
-       <StarryBackground/>
-       </div>
-      </div>
+    <>
+      {/* Starry background always visible */}
+      <StarryBackground />
 
-     
-      { /* content */ }
-    </ReactLenis>
+      {/* IntroScreen overlays on top of stars */}
+      {!introDone && <IntroScreen onFinish={() => setIntroDone(true)} />}
+
+      {/* Portfolio content over the same Starry background */}
+      {introDone && (
+        <div className="relative z-0 text-white">
+          <div className="container mx-auto sticky top-0 z-[999]">
+            <Nav />
+            <Banner />
+            <AboutMe />
+            <Skills />
+            <Experience />
+            <Projects />
+            <Education />
+            <Footer />
+          </div>
+        </div>
+      )}
     </>
   );
 }
